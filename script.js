@@ -16,3 +16,38 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
+
+function abrirModal(titulo, descricao) {
+    document.getElementById('modalTitulo').innerText = titulo;
+    document.getElementById('modalDescricao').innerText = descricao;
+    document.getElementById('infoModal').style.display = 'flex';
+}
+
+function fecharModal() {
+    document.getElementById('infoModal').style.display = 'none';
+}
+
+
+// Fecha modal ao clicar fora do conteúdo
+window.onclick = function(event) {
+    const modal = document.getElementById('infoModal');
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.getElementById("entrarBtn").addEventListener("click", function () {
+    document.getElementById("loginModal").style.display = "flex";
+});
+
+document.getElementById("loginModalClose").addEventListener("click", function () {
+    document.getElementById("loginModal").style.display = "none";
+});
+
+// Fechar ao clicar fora do modal
+window.addEventListener("click", function (event) {
+    const loginModal = document.getElementById("loginModal");
+    if (event.target === loginModal) {
+        loginModal.style.display = "none";
+    }
+});

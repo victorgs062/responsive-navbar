@@ -5,29 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meadote</title>
+    <title>mundopet</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png">
 </head>
 
 <body>
     <header class="header">
-        <nav class="navbar">     
+        <nav class="navbar">
             <a href="#" class="nav-logo">
-            <img src="logo.png" alt="Logo PetShop" class="logo-img">
-            meadote
+                <img src="img/logo.png" alt="Logo PetShop" class="logo-img">
+                mundopet
             </a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Cachorro</a>
+                    <a href="#" class="nav-link">INICIO</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Gato</a>
+                    <a href="#" class="nav-link">CARRINHO</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Peixe</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Outros</a>
+                    <a href="#" class="nav-link" id="entrarBtn">ENTRAR</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -37,6 +35,109 @@
             </div>
         </nav>
     </header>
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Bem-vindo ao mundopet</h1>
+                <p>Mais que um petshop, um lar para quem você ama. Tudo o que seu pet precisa, com o cuidado que ele
+                    merece.</p>
+                <a href="#" class="cta-button">Enviar mensagem</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/image_1.png" alt="Pet feliz" />
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="feature-box">
+                <img src="img/image_2.svg" alt="Agendamento" />
+                <h2>Fidelidade</h2>
+                <p>Clientes frequentes ganham descontos especiais em nossos serviços e produtos.</p>
+            </div>
+            <div class="feature-box">
+                <img src="img/image_3.svg" alt="Cuidado e carinho" />
+                <h2>Cuidados Garantidos</h2>
+                <p>Banho, tosa, consultas veterinárias e muito mais, com todo o carinho que seu pet merece.</p>
+            </div>
+            <div class="feature-box">
+                <img src="img/image_4.svg" alt="Contato facilitado" />
+                <h2>Fale Conosco</h2>
+                <p>Precisa de ajuda? Entre em contato com a nossa equipe diretamente pelo site.</p>
+            </div>
+        </section>
+        <section class="products-section">
+            <h2 class="section-title">Produtos recomendados</h2>
+            <div class="products-container">
+                <div class="product-card"
+                    onclick="abrirModal('Tosa Completa', 'Tosa com acabamento profissional para raças de pequeno a médio porte.')">
+                    <img src="img/tosa_completa.png" alt="Tosa Completa">
+                    <p>Tosa Completa<br><strong>R$ 35,00</strong></p>
+                    <button class="add-btn" onclick="event.stopPropagation()">+</button>
+                </div>
+
+                <div class="product-card"
+                    onclick="abrirModal('Corte de Unhas', 'Corte cuidadoso das unhas para garantir segurança e conforto ao seu pet.')">
+                    <img src="img/unhas.png" alt="Corte de Unhas">
+                    <p>Corte de Unhas<br><strong>R$ 10,00</strong></p>
+                    <button class="add-btn" onclick="event.stopPropagation()">+</button>
+                </div>
+
+                <div class="product-card"
+                    onclick="abrirModal('Adestramento', 'Treinamento especializado para obediência, socialização e correção de comportamentos.')">
+                    <img src="img/adestramento.png" alt="Adestramento">
+                    <p>Adestramento<br><strong>R$ 150,00</strong></p>
+                    <button class="add-btn" onclick="event.stopPropagation()">+</button>
+                </div>
+
+                <div class="product-card"
+                    onclick="abrirModal('Banho', 'Banho com produtos específicos para a pelagem e pele do seu pet.')">
+                    <img src="img/banho.png" alt="Banho">
+                    <p>Banho<br><strong>R$ 100,00</strong></p>
+                    <button class="add-btn" onclick="event.stopPropagation()">+</button>
+                </div>
+
+                <div class="product-card"
+                    onclick="abrirModal('Creche', 'Ambiente seguro e divertido para seu pet socializar e brincar durante o dia.')">
+                    <img src="img/creche.png" alt="Creche">
+                    <p>Creche<br><strong>R$ 50,00</strong></p>
+                    <button class="add-btn" onclick="event.stopPropagation()">+</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Site desenvolvido por @victorgs062</p>
+    </footer>
+    </footer>
+
+
+    <!-- Modal Login/Registro -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal-content">
+            <span class="close" id="loginModalClose">&times;</span>
+            <div class="login-register-panel">
+                <div class="login-side">
+                    <h3>Entrar</h3>
+                    <form>
+                        <input type="email" placeholder="E-mail" required />
+                        <input type="password" placeholder="Senha" required />
+                        <button class="submit-btn">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h3 id="modalTitulo"></h3>
+            <p id="modalDescricao"></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
